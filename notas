@@ -2,18 +2,19 @@
 
 int main()
 {
-    float v[50], media, soma, alunos, acima;
-    int i = 0;
-    soma = 0.0;
+    float v[50], alunos, acima;
+    float soma, media;
+    int i;
+    soma = 0;
     acima = 0;
-    scanf("%d", &alunos);
-    for (; i < 50; i++)
+    scanf("%f", &alunos);
+    for (i = 0; i < alunos; i++)
     {
-        scanf("%d", &v[i]);
+        scanf("%f", &v[i]);
         soma = soma + v[i];
     }
     media = soma / alunos;
-    for (; i < 50; i++)
+    for (i = 0; i < alunos; i++)
     {
         if (v[i] > media)
         {
@@ -21,6 +22,6 @@ int main()
         }
     }
     printf("Média = %.2f\n", media);
-    printf("N. alunos acima da média = %d\n", acima);
+    printf("N. alunos acima da média = %.f\n", acima);
     return 0;
 }
