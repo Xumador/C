@@ -1,0 +1,41 @@
+/*------------------------------------------------------
+ * Primeiro trabalho AEDs I - Programação
+ * Assunto: Comandos de controle de repetição e seleção
+ * Prof. Luiz Eduardo da Silva
+ * Aluno: José Argemiro dos Reis Neto
+ -----------------------------------------------------*/
+#include <stdio.h>
+int main() {
+  int n, a, b, c, aux, invertido, conta, caso = 0;
+  int x, y, z, temp, invertido2, conta2;
+  for (n = 123; n <= 987; n++) {
+    aux = n % 10;
+    a = aux;
+    aux = n / 10;
+    b = aux % 10;
+    aux = aux / 10;
+    c = aux % 10;
+    invertido = (a * 100) + (b * 10) + (c * 1);
+    if ((a != b && a != c && b != c) && (a != 0 && b != 0 && c != 0)) {
+      if (invertido < n) {
+        conta = n - invertido;
+        caso++;
+        printf("caso %3.d: %d-%d=%3.d", caso, n, invertido, conta);
+      } else {
+        conta = invertido - n;
+        caso++;
+        printf("caso %3.d: %d-%d=%3.d", caso, invertido, n, conta);
+      }
+      temp = conta % 10;
+      x = temp;
+      temp = conta / 10;
+      y = temp % 10;
+      temp = temp / 10;
+      z = temp % 10;
+      invertido2 = (x * 100) + (y * 10) + (z * 1);
+      conta2 = conta + invertido2;
+      printf(", %3d+%3d=%d\n", conta, invertido2, conta2);
+    }
+  }
+  return 0;
+}
