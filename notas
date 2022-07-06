@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    float v[50], media, soma, alunos, acima;
+    int i = 0;
+    soma = 0.0;
+    acima = 0;
+    scanf("%d", &alunos);
+    for (; i < 50; i++)
+    {
+        scanf("%d", &v[i]);
+        soma = soma + v[i];
+    }
+    media = soma / alunos;
+    for (; i < 50; i++)
+    {
+        if (v[i] > media)
+        {
+            acima++;
+        }
+    }
+    printf("Média = %.2f\n", media);
+    printf("N. alunos acima da média = %d\n", acima);
+    return 0;
+}
