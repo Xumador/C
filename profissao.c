@@ -15,12 +15,17 @@ int main()
     int codigo, i;
     for (i = 0; i < 5; i++)
         printf("%d %s\n", tabela[i].codigo, tabela[i].profissao);
-    puts("Digite um código: ");
-    scanf("%d", &codigo);
-    for (i = 0; i < 5 && codigo != tabela[i].codigo; i++)
-        ;
-    if (codigo == tabela[i].codigo)
-        printf("A profissão é %s\n", tabela[i].profissao);
-    else
-        printf("Código não cadastrado.\n");
+    printf("Digite um código ou '0' para encerrar a busca: ");
+    while (codigo != 0)
+    {
+        scanf("%d", &codigo);
+        for (i = 0; i < 5 && codigo != tabela[i].codigo; i++)
+            ;
+        if (codigo == tabela[i].codigo && codigo != 0)
+            printf("A profissão é %s\n", tabela[i].profissao);
+        else if (codigo != 0)
+            puts("Código não cadastrado.");
+        else
+            puts("Busca encerrada.");
+    }
 }
